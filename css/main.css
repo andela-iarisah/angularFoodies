@@ -1,0 +1,149 @@
+/***************************
+		UPPER BODY
+***************************/
+
+div.header {
+	background-image: url('../images/bgimage.jpg');
+	background-size: 100% 100%;
+	text-align: center;
+	border-bottom: 10px solid #660000;
+}
+
+h1 {
+	font-family: 'segoe script', 'segoe print', 'comic sans ms', cursive;
+	color: red;
+	font-size: 6em;
+	padding: 30px 50px 50px 50px;
+	text-shadow: 0 0 10px yellow;
+}
+
+p.title {
+	color: white;
+	font-size: 3em;
+	padding-bottom: 10px;
+	font-family: 'HP simplified Light', arial, sans-serif;
+}
+
+div.search {
+	padding-top: 20px;
+	text-align: center;
+	background-color: rgba(0, 0, 0, 0.7);
+	width: 40%;
+	margin: 0 auto;
+}
+
+input#search {
+	padding: 3px;
+}
+
+/***************************
+		LOWER BODY
+***************************/
+
+body {
+	background-color: rgb(250, 250, 200);
+}
+
+div#toAttach {
+	margin: 0 auto;
+}
+
+ul {
+	list-style: none;
+	padding: 10px;
+	float: left;
+}
+
+li.style {
+	padding: 10px;
+	margin: 10px;
+	width: 200px;
+	float: left;
+}
+
+img.resize {
+	height: 200px;
+	border: 2px solid red;
+	border-radius: 20px;
+}
+
+img.resize:hover {
+	border: 2px solid #660000;
+	box-shadow: 0 0 10px #660000;
+}
+
+p.ingredients {
+	display: none;
+	width: 200px;
+	height: 50px;
+	padding: 5px;
+	background-color: black;
+	color: rgb(255, 100, 100);
+	overflow: auto;
+	cursor: default;
+	text-align: center;
+	font-family: roman, script, sans-serif;
+	line-height: 1.2em;
+	font-size: 0.825em;
+}
+
+font.diff_color {
+	color: rgb(250, 250, 200);
+	padding-bottom: 5px;
+}
+
+p.width {
+	width: 200px;
+	height: 50px;
+	padding: 5px;
+	color: yellow;
+	background-color: black;
+	line-height: 1.2em;
+	text-align: center;
+	font-family: roman, script, sans-serif;
+	font-size: 0.825em;
+	cursor: default;
+}
+
+p.center {
+	background-color: red;
+	width: 10%;
+}
+
+
+/***************************
+		ERROR PAGE
+***************************/
+
+img.center{
+	width: 100%;
+	margin: 0;
+}
+
+p.right {
+	text-align: center;
+	padding-top: 10px;
+	font-size: 2em;
+	color: red;
+}
+
+div.recover {
+	text-align: center;
+	padding-top: 20px;
+}
+
+div.align {
+	width: 100%;
+	text-align: center;
+	padding-top: 20px;
+}
+
+input#return {
+	padding: 10px;
+	border-radius: 20px;
+	font-size: 1.5em;
+	background-color: black;
+	color: yellow;
+	border: none;
+	text-align: center;
+}
