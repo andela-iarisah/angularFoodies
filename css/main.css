@@ -87,6 +87,10 @@ p.ingredients {
 	font-size: 0.825em;
 }
 
+/*p.hide {
+	display: none;
+}*/
+
 font.diff_color {
 	color: rgb(250, 250, 200);
 	padding-bottom: 5px;
