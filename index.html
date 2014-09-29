@@ -11,24 +11,51 @@
 		<script src= "scripts/app.js"></script>
 	<head>
 		<body ng-controller= "foodiesController as foodCtrl">
-			<div class= "header">
+			<div class= "header" ng-show= "header">
 				<h1>Welcome to<br>Foodies</h1>
 					<div class= "search">
 						<p class= "title">Discover world renowned recipes</p>
-						<form action= "#" ng-submit= "getSearch()">
-							<input type= "text" name= "text" id= "search" ng-model= "typeIn">
+						<form name= "validation" ng-submit= "validation.$valid && getSearch() " novalidate>
+							<input type= "text" name= "text" id= "search" ng-model= "typeIn" required>
 							<input id= "submit" type= "submit" value= "search">
 						</form>
 					</div>
 			</div>
-				<div id= "toAttach" ng-repeat= "food in result">
-					<ul>
-						<a target= "_blank" ng-href= "http://www.yummly.com/recipe/external/{{food.id}}">
+			<div class= "unavailable" ng-show= "unavailable">
+				<div class= "error">
+					<div class= "errorMsg">FOODIES PANEL JUDGMENT!</div>
+					<img height= "400px" width= "400px" class= "center" src= "images/error.jpg"/>
+				</div>
+				<p class= "right">Sorry your input is temporarily unavailable</p>
+				<div class= "align">
+					<a href= "index.html">
+					<input id= "return" type= "button" value= "Return to Page">
+					</a>
+				</div>
+			</div>
+			<div class= "wrongInput" ng-show= "incorrect">
+				<div class= "error">
+					<div class= "errorMsg">FOODIES PANEL JUDGMENT!</div>
+					<img height= "400px" width= "400px" class= "center" src= "images/error.jpg"/>
+				</div>
+					<p class= "right">Please type a valid input</p>
+				<div class= "align">
+					<a href= "index.html">
+					<input id= "return" type= "button" value= "Return to Page">
+					</a>
+				</div>
+			</div>
+				<div id= "toAttach" ng-repeat= "food in result" ng-show = "numItems">
+					<ul>		
 						<li class= "style">
-							<img class= "resize" ng-src= "{{food.imageUrlsBySize.90}}">
+						<a target= "_blank" ng-href= "http://www.yummly.com/recipe/external/{{food.id}}">
+							<img class= "resize" ng-src= "{{imageProcess(food.imageUrlsBySize)}}">
 						</a>
-							<p class= "width hide">{{food.recipeName}}
-								<p class= "ingredients" ng-repeat= "ingredient in food.ingredients"><font class= "diff_color"></font>{{ingredient}}</p>
+							<p class= "width hide">{{food.recipeName}}<br>
+								<div >
+									<span class= "ingredients" ng-repeat= "ingredient in food.ingredients"><font class= "diff_color"></font>{{ingredient}}
+									</span>
+								</div>
 							</p>
 						</li>
 					</ul>

@@ -1,9 +1,18 @@
 (function(){
 	var app = angular.module('foodiesApp', []);
 	app.controller('foodiesController', ['$scope', '$http', function($scope, $http){
+			$scope.header = true;
+			$scope.unavailable = false;
+			$scope.incorrect = false;
 			$scope.foodItems = [];
+		$scope.imageProcess = function(imgUrl) {
+			if (imgUrl && imgUrl[90]) {
+				return imgUrl[90];
+			}
+			return 'images/unavailable.jpg'
+		}
+
 		$scope.getSearch = function() {
-			console.log($scope.typeIn);
 			var config = {
 				method: "jsonp",
 				url: "http://api.yummly.com/v1/api/recipes",
@@ -14,11 +23,27 @@
 			 		callback: "JSON_CALLBACK"
 				}
 			};
+					
+				if (!isNaN($scope.typeIn)) {
+				 	$scope.header = false;
+				 	$scope.incorrect = true;
+				 	$scope.numItems = false;
+				 	return false;
+				}
 
 				$http(config).success(function(response) {
-					console.log(response);
 					$scope.foodItems = response;
 					$scope.result = $scope.foodItems.matches;
+
+					if ($scope.result.length < 1) {
+						$scope.header = false;
+						$scope.numItems = false;
+						$scope.unavailable = true;
+					}	
+					else {
+						$scope.header = true;
+						$scope.numItems = true;
+					}
 				});
 				$scope.typeIn = "";
 			};
