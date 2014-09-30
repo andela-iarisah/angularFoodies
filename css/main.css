@@ -44,6 +44,16 @@ body {
 	background-color: rgb(250, 250, 200);
 }
 
+div.loadwrap {
+	text-align: center;
+}
+
+img#load {
+	height: 12.5%;
+	width: 12.5%;
+	padding-top: 30px;
+}
+
 div#toAttach {
 	margin: 0 auto;
 }
@@ -72,19 +82,23 @@ img.resize:hover {
 	box-shadow: 0 0 10px #660000;
 }
 
+img.back {
+	width: 20px;
+	height: 20px;
+	position: relative;
+	top: 5%;
+}
+
 span.ingredients {
 	width: 200px;
 	height: 50px;
 	padding: 5px;
 	background-color: black;
 	color: rgb(255, 100, 100);
-	overflow: auto;
-	cursor: default;
 	text-align: center;
 	font-family: roman, script, sans-serif;
 	line-height: 1.2em;
 	font-size: 0.825em;
-	/*display: none;*/
 }
 
 font.diff_color {
@@ -108,6 +122,13 @@ p.width {
 p.center {
 	background-color: red;
 	width: 10%;
+}
+
+input#ingredients {
+	color: #660000;
+	background-color: rgb(250, 250, 200);
+	border: none;
+	font-family: aharoni, arial, sans-serif;
 }
 
 

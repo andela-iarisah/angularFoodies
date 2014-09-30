@@ -8,7 +8,6 @@
 		<link rel= "stylesheet" type= "text/css" href= "css/main.css">
 		<link rel= "stylesheet" type= "text/css" href= "css/responsive.css">
 		<script src= "scripts/angular.min.js"></script>
-		<!-- // <script src= "scripts/angular-animation.min.js"></script> -->
 		<script src= "scripts/app.js"></script>
 	<head>
 		<body ng-controller= "foodiesController as foodCtrl">
@@ -46,14 +45,19 @@
 					</a>
 				</div>
 			</div>
-				<div id= "toAttach" ng-repeat= "food in result" ng-show = "numItems">
+			<div class= "loadwrap"><img src= "images/loader.gif" id= "load" ng-show= "load"></div>
+				<div id= "toAttach" ng-repeat= "food in result" ng-show = "numItems">	
 					<ul>		
 						<li class= "style">
 						<a target= "_blank" ng-href= "http://www.yummly.com/recipe/external/{{food.id}}">
 							<img class= "resize" ng-src= "{{imageProcess(food.imageUrlsBySize)}}">
 						</a>
-							<p class= "width">{{food.recipeName}}<br>
-								<span class= "ingredients" ng-repeat= "ingredient in food.ingredients"><font class= "diff_color"></font>{{ingredient}}
+							<p class= "width" ng-hide= "rcpName">{{food.recipeName}}<br>
+							<img src= "images/goback.jpg" class= "back" 
+							ng-click= "HideIngredients()" ng-hide= "leavePresent"/>
+								<input type= "submit" value= "View Ingredients" id= "ingredients" ng-click= "showIngredients()" ng-show= "onclick">
+
+								<span class= "ingredients" ng-repeat= "ingredient in food.ingredients" ng-hide= "hideIngredients"><font class= "diff_color"></font>{{ingredient}}
 								</span>
 							</p>
 						</li>
