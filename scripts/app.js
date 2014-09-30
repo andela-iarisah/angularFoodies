@@ -5,6 +5,7 @@
 			$scope.unavailable = false;
 			$scope.incorrect = false;
 			$scope.foodItems = [];
+		
 		$scope.imageProcess = function(imgUrl) {
 			if (imgUrl && imgUrl[90]) {
 				return imgUrl[90];
@@ -46,6 +47,6 @@
 					}
 				});
 				$scope.typeIn = "";
-			};
+		};
 	}]);
 })();

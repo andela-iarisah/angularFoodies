@@ -8,6 +8,7 @@
 		<link rel= "stylesheet" type= "text/css" href= "css/main.css">
 		<link rel= "stylesheet" type= "text/css" href= "css/responsive.css">
 		<script src= "scripts/angular.min.js"></script>
+		<!-- // <script src= "scripts/angular-animation.min.js"></script> -->
 		<script src= "scripts/app.js"></script>
 	<head>
 		<body ng-controller= "foodiesController as foodCtrl">
@@ -51,11 +52,9 @@
 						<a target= "_blank" ng-href= "http://www.yummly.com/recipe/external/{{food.id}}">
 							<img class= "resize" ng-src= "{{imageProcess(food.imageUrlsBySize)}}">
 						</a>
-							<p class= "width hide">{{food.recipeName}}<br>
-								<div >
-									<span class= "ingredients" ng-repeat= "ingredient in food.ingredients"><font class= "diff_color"></font>{{ingredient}}
-									</span>
-								</div>
+							<p class= "width">{{food.recipeName}}<br>
+								<span class= "ingredients" ng-repeat= "ingredient in food.ingredients"><font class= "diff_color"></font>{{ingredient}}
+								</span>
 							</p>
 						</li>
 					</ul>

@@ -84,7 +84,7 @@ span.ingredients {
 	font-family: roman, script, sans-serif;
 	line-height: 1.2em;
 	font-size: 0.825em;
-	display: none;
+	/*display: none;*/
 }
 
 font.diff_color {
